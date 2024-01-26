@@ -46,6 +46,7 @@
             height: 50px;
             background-color: red;
             border-radius: 5px;
+            position: absolute;
         }
     </style>
 </head>
@@ -65,15 +66,17 @@
     <script>
         var angle = 0;
         var radius = 100;
-        var speed = 0.005; // Slower color-changing speed
+        var speed = 0.3; // Slower color-changing speed
 
         function moveCube() {
             var cube = document.getElementById('movingCube');
             var x = Math.cos(angle) * radius;
             var y = Math.sin(angle) * radius;
 
-            cube.style.left = x + 'px';
-            cube.style.top = y + 'px';
+
+            cube.style.left = window.innerWidth / 2 + x - cube.offsetWidth / 2 + 'px';
+            cube.style.top = window.innerHeight / 2 + y - cube.offsetHeight / 2 + 'px';
+          
 
             // Change color (you can modify this part to suit your color-changing logic)
             var color = 'rgb(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';

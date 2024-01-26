@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<title>box</title>
+
+<title>box2</title>
 
 <head>
     <style>
@@ -44,6 +45,7 @@
             background-color: red;
             position: absolute;
             border-radius: 5px;
+            transform: translate(-50%, -50%); /* Center the cube */
         }
     </style>
 </head>
@@ -53,7 +55,7 @@
     <div class="topnav">
         <a href="index.html" target="_self">Home</a>
         <a href="index2.html" target="_self">Side 2</a>
-        <a href="side3.html" class="active">Side 3</a>
+        <a href="side3.html" class="actie">Side 3</a>
     </div>
 
     <div id="movingCube"></div>
@@ -65,8 +67,8 @@
 
         function moveCube() {
             var cube = document.getElementById('movingCube');
-            var x = Math.cos(angle) * radius + window.innerWidth / 2 - cube.offsetWidth / 2;
-            var y = Math.sin(angle) * radius + window.innerHeight / 2 - cube.offsetHeight / 2;
+            var x = Math.cos(angle) * radius;
+            var y = Math.sin(angle) * radius;
 
             cube.style.left = x + 'px';
             cube.style.top = y + 'px';
